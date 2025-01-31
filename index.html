@@ -11,7 +11,7 @@
 <body>
     <div class="container">
         <p>Enter your Text or URL</p>
-        <input type="text" placeholder="enter your text or URL" id="qrtext">
+        <textarea type="text" placeholder="enter your text or URL" id="qrtext"></textarea>
         <div id="imgbox">
             <img src="" id="qrimage">
         </div>
@@ -19,9 +19,9 @@
     </div>
 
     <script>
-        let imgbox = document.getElementById("imgbox");
-        let qrimage = document.getElementById("qrimage");
-        let qrtext = document.getElementById("qrtext");
+        let imgbox = document.querySelector("#imgbox");
+        let qrimage = document.querySelector("#qrimage");
+        let qrtext = document.querySelector("#qrtext");
         function generateQR() {
             if (qrtext.value.length > 0) {
                 qrimage.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + qrtext.value;
