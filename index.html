@@ -11,20 +11,20 @@
 <body>
     <div class="container">
         <p>Enter your Text or URL</p>
-        <textarea type="text" placeholder="enter your text or URL" id="qrtext"></textarea>
+        <textarea type="text" placeholder="enter your text or URL"></textarea>
         <div id="imgbox">
-            <img src="" id="qrimage">
+            <img src="">
         </div>
         <button onclick="generateQR()">Generate QR Code</button>
     </div>
 
     <script>
-        let imgbox = document.querySelector("#imgbox");
-        let qrimage = document.querySelector("#qrimage");
-        let qrtext = document.querySelector("#qrtext");
+        const qrtext = document.querySelector("textarea");
+        const imgbox = document.querySelector("#imgbox");
+        const image = document.querySelector("img");
         function generateQR() {
             if (qrtext.value.length > 0) {
-                qrimage.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + qrtext.value;
+                image.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + qrtext.value;
                 imgbox.classList.add("show-img");
             } else {
                 qrtext.classList.add('error');
